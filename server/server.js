@@ -6,6 +6,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config();
 const authRoutes =  require('./src/routes/auth');
+const userRoutes =  require('./src/routes/user');
 // console.log('db',process.env.DATABASE);
 mongoose.connect(process.env.DATABASE,{
     useNewUrlParser:true
@@ -26,6 +27,7 @@ if(process.env.NODE_ENV = 'development'){
 
 
 app.use('/api',authRoutes);
+app.use('/api',userRoutes);
 
 
 app.listen(PORT,()=>{

@@ -21,3 +21,19 @@ exports.userSigninValidator = [
     .isLength({min:6})
     .withMessage('Password Must be at least 6 character')
 ]
+
+exports.forgotPasswordValidator = [    
+    check('email')
+    .not()
+    .isEmpty()
+    .isEmail()
+    .withMessage('Must be a valid email Address')    
+]
+
+exports.resetPasswordValidator = [    
+    check('newPassword')
+    .not()
+    .isEmpty()
+    .isLength({min:6})
+    .withMessage('Password Must be at least 6 character')
+]
